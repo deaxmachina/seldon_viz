@@ -26,7 +26,7 @@ body {
 
 .instructions {
   color: #f1f1f1;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .notes-wrapper {
@@ -43,4 +43,12 @@ body {
 
 .notes-wrapper ul {
   margin-left: 30px;
+}
+
+.animation-example-text {
+  color: #f1f1f1;
+}
+
+p.animation-example-text {
+  margin-bottom: 30px;
 }

@@ -40,7 +40,7 @@ const PlotLive = ({
       .classed("reference-g", true)
 
     const scatterReference = referenceG.selectAll("circle")
-      .data(_.sampleSize(referenceData, 8000))
+      .data(_.sampleSize(referenceData, 4000))
       .join("circle")
       .attr("cx", d => xScale(d['0']))
       .attr('cy', d => yScale(d['1']))
@@ -58,7 +58,7 @@ const PlotLive = ({
     && (d.date.getTime() == selectedDate.getTime())
 
     const scatterLive = liveG.selectAll("circle")
-      .data(_.sampleSize(liveData, 8000))
+      .data(_.sampleSize(liveData, 5000))
       .join("circle")
       .attr("cx", d => xScale(d['0']))
       .attr('cy', d => yScale(d['1']))

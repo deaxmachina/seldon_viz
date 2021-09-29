@@ -8,6 +8,7 @@ import referenceDataLoad from "./data/reference.csv";
 import ClothesMenu from "./Components/ClothesMenu/ClothesMenu";
 import DateSlider from "./Components/DatePicker/DatePicker";
 import PlotLive from "./Components/PlotLive/PlotLive";
+import PlotAnimated from "./Components/PlotAnimated/PlotAnimated"
 
 /////////////////////////////
 /// Explore training data ///
@@ -69,6 +70,26 @@ const ExplorePredictions = ({
   )
 }
 
+const AnimationExample = ({ 
+  uniqueLabels, setAnimationSelectedItem, liveData, referenceData, animationSelectedItem
+}) => {
+  return (
+    <>
+      <h2 className="animation-example-text">Simple Animation Example</h2>
+      <p className="animation-example-text">
+        Below is a simple example of what an animation might look like. Click on an item to see
+        predictions over time in blue, on top of reference data in pink.  
+      </p>
+      <ClothesMenu uniqueLabels={uniqueLabels} setSelectedItem={setAnimationSelectedItem}/>
+      <PlotAnimated 
+        liveData={liveData}
+        referenceData={referenceData}
+        selectedItem={animationSelectedItem}
+      />
+    </>
+  )
+}
+
 
 /////////////////////////////
 ////////// Notes ////////////
@@ -77,7 +98,7 @@ const NotesSection = () => {
   return (
     <div className="notes-wrapper">
       <p>
-        My approach was simple due to time constraints. Everything took me about 4 hours. 
+        My approach was simple due to time constraints. Everything took me about 4-5 hours. 
       </p>
       <h3>Concept</h3>
       <ul>
@@ -125,7 +146,8 @@ const App = () => {
   const [referenceData, setReferenceData] = useState(null)
   const [uniqueLabels, setUniqueLabels] = useState(null)
   const [selectedItem, setSelectedItem] = useState("all")
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [animationSelectedItem, setAnimationSelectedItem] = useState(null)
+  const [selectedDate, setSelectedDate] = useState(new Date())
   const [allTime, setAllTime] = useState(true)
 
   /// Load in the data ///
@@ -166,8 +188,15 @@ const App = () => {
               allTime={allTime}
               setAllTime={setAllTime}
             />
-            <br /><br /><br />
+            <br/><br/><br/>
             <NotesSection />
+            <AnimationExample 
+              uniqueLabels={uniqueLabels}
+              setAnimationSelectedItem={setAnimationSelectedItem}
+              liveData={liveData}
+              referenceData={referenceData}
+              animationSelectedItem={animationSelectedItem}
+            />
           </div>
         : null
       }
