@@ -1,0 +1,24 @@
+.date-picker-wrapper {
+  background-color: white;
+  width: 155px;
+  margin: auto;
+}
+
+.date-options-wrapper {
+  display: flex;
+  width: 300px;
+  margin: auto;
+}
+
+.date-options-wrapper button {
+  background-color: white;
+  border: none;
+  padding: 0 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.date-options-wrapper button:hover {
+  background-color: #ffbe0b;
+}

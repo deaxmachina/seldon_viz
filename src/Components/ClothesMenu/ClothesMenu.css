@@ -1,0 +1,55 @@
+.clothes-menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  margin: 20px auto 60px;
+}
+
+.clothes-menu-container div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clothes-menu-label {
+  background-color: white;
+  padding: 0 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.clothes-menu-img {
+  width: 40px;
+  height: 40px;
+  margin-top: 7px;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.clothes-menu-img:hover, .clothes-menu-img:active {
+  border: 4px solid #ffbe0b;
+}
+
+.clothes-menu-instructions {
+  margin-top: 40px;
+}
+
+.ref-data-col, .live-data-col{
+  color: white;
+  padding: 0 3px;
+}
+
+.ref-data-col {
+  background-color: #ff006e;
+}
+
+.live-data-col {
+  background-color: #3a86ff;
+}
+
+.instructions-long {
+  text-align: left;
+  margin-bottom: 40px;
+}
